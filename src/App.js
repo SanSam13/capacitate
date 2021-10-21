@@ -7,7 +7,7 @@ import Us from './views/Us'
 
 function App() {
   return (
-    <>
+    <div className='body'>
       <Router>
         <Header></Header>
         <Switch>
@@ -16,7 +16,7 @@ function App() {
         </Switch>
         <Footer></Footer>
       </Router>  
-    </>
+    </div>
   );
 }
 

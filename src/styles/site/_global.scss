@@ -4,6 +4,11 @@ body{
   #root{
     overflow: hidden;
   }
+  .body{
+    @include mq(tablet, max){
+      margin-top: 88px;
+    }
+  }
   .nopadding {
     padding: 0 !important;
     margin: 0 !important;
