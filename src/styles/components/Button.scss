@@ -1,0 +1,45 @@
+.color-btn{
+    @include buttonStyles(100%, 10px, #74787a);
+    &.administrativo{
+        background-color: #745b79;
+    }
+    &.agropecuario{
+        background-color: #2eb463;
+    }
+    &.alimentos{
+        background-color: #84c555;
+    }
+    &.comercio{
+        background-color: #e65a5c;
+    }
+    &.construccion{
+        background-color: #ed7238;
+    }
+    &.formacion{
+        background-color: #275caa;
+    }
+    &.industrial{
+        background-color: #f9a643;
+    }
+    &.mineria{
+        background-color: #74787a;
+    }
+    &.moda{
+        background-color: #e4868c;
+    }
+    &.salud{
+        background-color: #1eb8d2;
+    }
+    &.servicio{
+        background-color: #2084c6;
+    }
+    &.social{
+        background-color: #843472;
+    }
+    &.tecnologia{
+        background-color: #12b0a6;
+    }
+    &.transporte{
+        background-color: #a93646;
+    }
+}

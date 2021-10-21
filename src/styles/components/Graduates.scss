@@ -1,0 +1,36 @@
+.graduates{
+    padding-bottom: 50px;
+    h5{
+        font-size: 1.9rem;
+        color: $gray;
+        font-weight: 700;
+        text-align: center;
+    }
+    .graduates-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 0 0 0;
+        &.disabled{
+            .course-card{
+                a{
+                    img{
+                        filter: grayscale(100%);
+                    }
+                    &:hover{
+                        p{
+                            color: $gray;
+                        }
+                        img{
+                            -ms-transform: scale(1);
+                            -webkit-transform: scale(1);
+                            -moz-transform: scale(1);
+                            -o-transform: scale(1);
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

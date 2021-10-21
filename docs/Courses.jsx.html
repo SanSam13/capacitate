@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Courses.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Courses.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useState} from 'react';
+import Title from '../components/Title';
+import CourseCard from './CourseCard';
+import ImageCourse from '../assets/images/curso1.png';
+import ImageSoon from '../assets/images/proximamente.png';
+
+/**
+ * Función para mostrar la sección de los cursos, los botones de los cursos muestra el contenido del curso.
+ * @returns Courses
+ */
+
+const Courses = () => {
+    
+    const [clickButton, setClickButton] = useState('tecnologia')
+    
+    return (
+        &lt;section className='courses'>
+            &lt;div className="container">
+                &lt;h3>Cursos&lt;/h3>
+                &lt;h4>Selecciona la categoría de tu interés para ver los cursos disponibles&lt;/h4>
+                &lt;div className="categories">
+                    &lt;div>&lt;button type="button" className='color-btn administrativo' onClick={(e) => setClickButton(e.target.classList[1])}>Administrativo&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn agropecuario' onClick={(e) => setClickButton(e.target.classList[1])}>Agropecuario&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn alimentos' onClick={(e) => setClickButton(e.target.classList[1])}>Alimentos&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn comercio' onClick={(e) => setClickButton(e.target.classList[1])}>Comercio&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn construccion' onClick={(e) => setClickButton(e.target.classList[1])}>Construcción&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn formacion' onClick={(e) => setClickButton(e.target.classList[1])}>Formación&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn industria' onClick={(e) => setClickButton(e.target.classList[1])}>Industria&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn mineria' onClick={(e) => setClickButton(e.target.classList[1])}>Minería&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn moda' onClick={(e) => setClickButton(e.target.classList[1])}>Moda&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn salud' onClick={(e) => setClickButton(e.target.classList[1])}>Salud&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn servicio' onClick={(e) => setClickButton(e.target.classList[1])}>Servicio&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn social' onClick={(e) => setClickButton(e.target.classList[1])}>Social&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn tecnologia' onClick={(e) => setClickButton(e.target.classList[1])}>Tecnología&lt;/button>&lt;/div>
+                    &lt;div>&lt;button type="button" className='color-btn transporte' onClick={(e) => setClickButton(e.target.classList[1])}>Transporte&lt;/button>&lt;/div>
+                &lt;/div>
+                &lt;div className="categories-container">
+                    &lt;p className='hidden'>{clickButton}&lt;/p>
+                    &lt;div className={clickButton === 'tecnologia' ? 'tecnologia active' : 'tecnologia'}>
+                        &lt;Title color='tecnologia' title='Tecnología de la información'>&lt;/Title>
+                        &lt;div className="course-list">
+                            &lt;CourseCard title='Asistente Web' link='/' image={ImageCourse}/>
+                            &lt;CourseCard title='Técnico en Informática' link='/' image={ImageCourse}/>
+                            &lt;CourseCard title='Técnico en Redes de datos' link='/' image={ImageCourse}/>
+                            &lt;CourseCard title='Reparador de Celulares y tabletas' link='/' image={ImageCourse}/>
+                            &lt;CourseCard title='Técnico en instalación y reparación de equipo de computo' link='/' image={ImageCourse}/>
+                        &lt;/div>
+                        &lt;div className="soon-course">
+                            &lt;h5>Próximamente&lt;/h5>
+                            &lt;div className="course-list disabled">
+                                &lt;CourseCard title='Curador de datos' link='/' image={ImageSoon}/>
+                                &lt;CourseCard title='finder' link='/' image={ImageSoon}/>
+                            &lt;/div>
+                            &lt;h4>¿No tenemos el curso que buscas?&lt;/h4>
+                            &lt;a href="/" className='border-btn' title='Envía tu sugerencia aquí'>Envía tu sugerencia aquí&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div className={clickButton === 'administrativo' ? 'administrativo active' : 'administrativo'}>
+                        &lt;Title color='administrativo' title='Administrativo'>&lt;/Title>
+                        &lt;div className="container">
+                            &lt;div className="row">
+                                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A placeat ratione, inventore dicta adipisci sint, dolores impedit ipsa ipsum repudiandae aperiam eius tenetur! Eligendi dignissimos, fuga sint culpa quisquam ea?&lt;/p>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/section>
+    )
+}
+
+export default Courses
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Button">Button</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#CourseCard">CourseCard</a></li><li><a href="global.html#Courses">Courses</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Graduates">Graduates</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Modal">Modal</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Search">Search</a></li><li><a href="global.html#Steps">Steps</a></li><li><a href="global.html#StepsCard">StepsCard</a></li><li><a href="global.html#Title">Title</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Oct 21 2021 15:57:36 GMT-0500 (hora de verano central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

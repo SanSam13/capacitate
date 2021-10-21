@@ -1,0 +1,60 @@
+.title{
+    background: $gray;
+    padding: 7px 0;
+    h3{
+        color: $white;
+        margin: 0;
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-align: center;
+        @include mq(mobile, max){
+            font-size: 2.5rem;
+        }
+    }
+    &.diplomado{
+        background-color: $primary;
+    }
+    &.administrativo{
+        background-color: #745b79;
+    }
+    &.agropecuario{
+        background-color: #2eb463;
+    }
+    &.alimentos{
+        background-color: #84c555;
+    }
+    &.comercio{
+        background-color: #e65a5c;
+    }
+    &.construccion{
+        background-color: #ed7238;
+    }
+    &.formacion{
+        background-color: #275caa;
+    }
+    &.industrial{
+        background-color: #f9a643;
+    }
+    &.mineria{
+        background-color: #74787a;
+    }
+    &.moda{
+        background-color: #e4868c;
+    }
+    &.salud{
+        background-color: #1eb8d2;
+    }
+    &.servicio{
+        background-color: #2084c6;
+    }
+    &.social{
+        background-color: #843472;
+    }
+    &.tecnologia{
+        background-color: #12b0a6;
+    }
+    &.transporte{
+        background-color: #a93646;
+    }
+    
+}

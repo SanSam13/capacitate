@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Navbar.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Navbar.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
+import Logo from '../assets/images/logo.png'
+import Search from './Search'
+
+/**
+ * Función para mostrar el menú, modal y buscador
+ * @returns Navbar
+ */
+
+const Navbar = () => {
+    /**
+     * Arreglo de las opciones del menu de navegación
+     */
+    const MenuData = [
+        {
+            title: 'Conócenos',
+            path: '/us'
+        },
+        {
+            title: 'Cursos',
+            path: '/courses',
+        },
+        {
+            title: 'Foro',
+            path: '/forum',
+        },
+        {
+            title: 'Bolsa de trabajo',
+            path: '/job',
+        },
+        {
+            title: 'Inscríbete',
+            path: '/signup',
+        },
+        {
+            title: 'Iniciar Sesión',
+            path: '/login',
+        },
+    ];
+
+    const [click, setClick] = useState(false)
+    const [clickButtonSearch, setClickButtonSearch] = useState(false)
+    const [clickButtonModal, setClickButtonModal] = useState(false)
+
+    //Función para cambiar el icono cerrar/abrir menú
+    const handleClick = () => setClick(!click)
+    const handleClickSearch = () => setClickButtonSearch(!clickButtonSearch)
+    const handleClickModal = () => setClickButtonModal(!clickButtonModal)
+
+    const closeMobileMenu = () => setClick(false)
+    const closeModal = () => setClickButtonModal(false)
+    
+    return (
+        &lt;>
+            &lt;nav>
+                &lt;div className="container">
+                    &lt;div className="mobile-icons">
+                        &lt;Link to='/' className='logo' title="Ir al home">
+                            &lt;img src={Logo} alt="Logo Capacítate para el empleo" />
+                        &lt;/Link>
+                        &lt;div className='menu-icon' onClick={handleClick}>
+                            &lt;i className={click ? 'fas fa-times' : 'fas fa-bars'}>&lt;/i>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div className={click ? 'menu active' : 'menu'}>
+                        &lt;ul>
+                            &lt;li className='house-icon'>
+                                &lt;Link to='/' title="Ir al home">
+                                    &lt;i className="fas fa-home">&lt;/i>
+                                &lt;/Link>
+                            &lt;/li>
+
+                            {MenuData.map((item, index) => {
+                                return(
+                                    &lt;li key={index} className='nav-item'>
+                                        &lt;Link to={item.path} title={item.title} onClick={closeMobileMenu}>
+                                            {item.title}
+                                        &lt;/Link>
+                                    &lt;/li>
+                                )
+                            })}
+                        &lt;/ul>
+                        &lt;div className="icons">
+                            &lt;div className="help-icon">
+                                &lt;span onClick={handleClickModal}>
+                                    &lt;i className="fas fa-question" >&lt;/i>
+                                &lt;/span>
+                            &lt;/div>
+                            &lt;div className="search-icon">
+                                &lt;span onClick={handleClickSearch}>
+                                    &lt;i className={clickButtonSearch ? 'fas fa-times': 'fas fa-search'}>&lt;/i>
+                                &lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/nav>
+            &lt;div className={clickButtonSearch ? 'search-container active' : 'search-container'}>
+                &lt;div className="container">
+                    &lt;Search/>
+                &lt;/div>
+            &lt;/div>
+            &lt;div className={clickButtonModal ? 'modal-container open' : 'modal-container'}>
+                &lt;div className="modal-custom">
+                    &lt;span className='close-icon' onClick={closeModal}>
+                        &lt;i className="fas fa-times">&lt;/i>
+                    &lt;/span>
+                    &lt;div className="header">
+                        &lt;h5>Ayuda&lt;/h5>
+                    &lt;/div>
+                    &lt;div className="body">
+                        &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, delectus repudiandae dolorem exercitationem nulla cum blanditiis id, in consequuntur ipsam non, recusandae cumque hic ea! Sit quos corporis necessitatibus nulla.&lt;/p>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/>
+    )
+}
+
+export default Navbar
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Button">Button</a></li><li><a href="global.html#Carousel">Carousel</a></li><li><a href="global.html#CourseCard">CourseCard</a></li><li><a href="global.html#Courses">Courses</a></li><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Graduates">Graduates</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Modal">Modal</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Search">Search</a></li><li><a href="global.html#Steps">Steps</a></li><li><a href="global.html#StepsCard">StepsCard</a></li><li><a href="global.html#Title">Title</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Thu Oct 21 2021 15:57:36 GMT-0500 (hora de verano central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

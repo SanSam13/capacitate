@@ -1,0 +1,34 @@
+.search-container{
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    position: absolute;
+    bottom: -74px;
+    left: 0;
+    z-index: 13;
+    width: 100%;
+    padding: 20px 0;
+    opacity: 0;
+    transition: 0.5s all;
+    .menu-icon{
+        float: right;
+        padding: 0px 20px;
+        i{
+            font-size: 2rem;
+            color: $white;
+            display: block;
+        }
+    }
+    form{
+        width: 40%;
+        text-align: center;
+        margin: 0 auto;
+        @include mq(mobile, max){
+            width: 100%;
+        }
+    }
+    &.active{
+        opacity: 1;
+    }
+    @include mq(tablet, max){
+        display: none;
+    }
+}

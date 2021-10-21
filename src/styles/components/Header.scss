@@ -1,0 +1,21 @@
+header{
+    background-color: $primary;
+    padding-top: 30px;
+    position: relative;
+    .logo{
+        img{
+            display: block;
+            margin: 0 auto 30px auto;
+            width: 100%;
+            max-width: 370px;
+            
+        }
+        @include mq(tablet, max){
+            display: none;
+        }
+    }
+    
+    @include mq(tablet, max){
+        padding-top: 0;
+    }
+}
