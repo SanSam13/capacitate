@@ -12,7 +12,7 @@ function CourseCard({title, image, link}) {
     return (
         <div className='course-card'>
             <a href='{link}' title={title}>
-                <img src={image} alt={title} />
+                <img src={image} alt={title} width="106" height="105"/>
                 <p>{title}</p>
             </a>
         </div>

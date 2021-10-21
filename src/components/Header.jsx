@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <header>
             <Link to='/' className='logo' title="Ir al home">
-                <img src={Logo} alt="Logo Capacítate para el empleo" />
+                <img src={Logo} alt="Logo Capacítate para el empleo" width="370" height="90" />
             </Link>
             <Navbar></Navbar>
         </header>
